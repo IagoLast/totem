@@ -1,0 +1,22 @@
+{
+  "name": "totem",
+  "version": "0.1.0",
+  "description": "A-frame element to handle user movement",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "Aframe",
+    "totem",
+    "user",
+    "movement",
+    "UX"
+  ],
+  "author": "iagolast",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.13.4"
+  }
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title> Hello totem! </title>
+  <meta name="description" content="Example of using totem elements for user-movement">
+  <script src="scripts/aframe.js"></script>
+  <script src="scripts/totem.js"></script>
+  <style type="text/css">
+  selector {
+    cursor: none;
+  }
+  </style>
+</head>
+
+<body>
+  <a-scene>
+    <a-sky color="lightblue "></a-sky>
+    <a-camera position="0 1 0">
+      <a-cursor></a-cursor>
+    </a-camera>
+    <!-- Totems -->
+    <a-cylinder radius="0.3" color="#333" position="4 1 4"></a-cylinder>
+    <a-cylinder radius="0.3" color="#333" position="4 1 -4"></a-cylinder>
+    <a-cylinder radius="0.3" color="#333" position="-4 1 4"></a-cylinder>
+    <a-cylinder radius="0.3" color="#333" position="4 1 -4"></a-cylinder>
+    <!-- Totems -->
+    <a-entity totem="color:red" position="10 1 10"></a-entity>
+    <a-entity totem="color:royalblue" position="0 1 10"></a-entity>
+    <a-entity totem="color:green" position="-10 1 10"></a-entity>
+    <a-entity totem="color:chocolate" position="-10 1 0"></a-entity>
+    <a-entity totem="color:blue" position="-10 1 -10"></a-entity>
+    <a-entity totem="color:orange" position="10 1 -10"></a-entity>
+    <a-plane id="floor" rotation=" -90 0 0 " width="1000 " height="1000 " color="#333 "></a-plane>
+  </a-scene>
+  <script src="scripts/app.js"></script>
+</body>
+
+</html>
