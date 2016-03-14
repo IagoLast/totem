@@ -1,7 +1,8 @@
 (function() {
 	AFRAME.registerComponent('totem', {
 		schema: {
-			color: { default: 'red' }
+			color: { default: 'red' },
+			cameraSelector: { default: 'a-entity[camera]' }
 		},
 
 		/**
@@ -48,6 +49,12 @@
 		 * This animation moves the camera object into the totem direction until the mouseLeave event is fired.
 		 */
 		onMouseEnter: function() {
+			var cameraSelector = this.components.totem.data.cameraSelector;
+			var camera = document.querySelector(cameraSelector);
+			if (!camera) {
+				throw new Error('No cameras found using the following selector: ' + cameraSelector);
+				return;
+			}
 			var position = this.getAttribute('position');
 			position = position.x + ' 1 ' + position.z;
 
@@ -56,7 +63,7 @@
 			animation.setAttribute('to', position);
 			animation.setAttribute('dur', '5000');
 			animation.setAttribute('easing', 'linear');
-			document.querySelector('a-camera').appendChild(animation);
+			camera.appendChild(animation);
 
 		},
 
@@ -68,8 +75,14 @@
 		 * Otherwise the camera object goes back to the original position.
 		 */
 		onMouseLeave: function() {
-			var animation = document.querySelector('a-camera').querySelector('a-animation');
-			document.querySelector('a-camera').removeChild(animation);
+			var cameraSelector = this.components.totem.data.cameraSelector;
+			var camera = document.querySelector(cameraSelector);
+			if (!camera) {
+				throw new Error('No cameras found using the following selector: ' + cameraSelector);
+				return;
+			}
+			var animation = camera.querySelector('a-animation');
+			camera.removeChild(animation);
 		},
 	});
 

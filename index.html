@@ -17,9 +17,9 @@
 <body>
   <a-scene>
     <a-sky color="lightblue "></a-sky>
-    <a-camera position="0 1 0">
+    <a-entity camera look-controls position="0 1 0">
       <a-cursor></a-cursor>
-    </a-camera>
+    </a-entity>
     <!-- Totems -->
     <a-cylinder radius="0.3" color="#333" position="4 1 4"></a-cylinder>
     <a-cylinder radius="0.3" color="#333" position="4 1 -4"></a-cylinder>
@@ -30,7 +30,7 @@
     <a-entity totem="color:royalblue" position="0 1 10"></a-entity>
     <a-entity totem="color:green" position="-10 1 10"></a-entity>
     <a-entity totem="color:chocolate" position="-10 1 0"></a-entity>
-    <a-entity totem="color:blue" position="-10 1 -10"></a-entity>
+    <a-entity totem="color:blue;" position="-10 1 -10"></a-entity>
     <a-entity totem="color:orange" position="10 1 -10"></a-entity>
     <a-plane id="floor" rotation=" -90 0 0 " width="1000 " height="1000 " color="#333 "></a-plane>
   </a-scene>
